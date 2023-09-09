@@ -1,0 +1,53 @@
+<link href="css/menu.css" rel="stylesheet">
+
+<nav layout="row" flex ng-cloak class="principale">
+    <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button logo_btn" aria-label="sidenav" ng-click="go_to('home.html')">
+                <img src="favicon.ico" title="Logo" alt="logo" class='logo' />
+            </md-button>
+
+            <h2 flex md-truncate class="text-right">
+                <span ng-if="utente">{{utente.nome}}</span>
+                <md-button class="md-raised md-accent" ng-if="login_controlla_completed && !utente" ng-click="go_to('index.html')">
+                    Login
+                </md-button>
+
+                <md-menu ng-if="utente.admin == 1">
+                    <md-button class="md-icon-button" aria-label="sidenav" ng-click="$mdMenu.open()">
+                        <md-icon md-svg-icon="img/icons/more.svg"></md-icon>
+                    </md-button>
+
+                    <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+                        <md-menu-item>
+                            <md-button ng-click="go_to('gestione_file.html')">
+                                <md-icon md-svg-icon="img/icons/file.svg"></md-icon>
+                                FILE
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="go_to('gestione_utenti.html')">
+                                <md-icon md-svg-icon="img/icons/cliente.svg"></md-icon>
+                                UTENTI
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider ng-if="utente.admin"></md-menu-divider>
+
+                        <md-menu-item>
+                            <md-button ng-click="logout()">
+                                <md-icon md-svg-icon="img/icons/logout.svg"></md-icon>
+                                Logout
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+
+                <md-button ng-if="utente.admin == 0" ng-click="logout()" class="md-icon-button">
+                    <md-icon md-svg-icon="img/icons/logout.svg"></md-icon>
+                    <md-tooltip md-direction="bottom">Logout</md-tooltip>
+                </md-button>
+            </h2>
+
+        </div>
+    </md-toolbar>
+</nav>

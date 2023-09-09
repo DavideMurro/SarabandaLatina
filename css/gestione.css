@@ -1,0 +1,16 @@
+md-list-item {
+	min-height: 60px !important;
+    padding: 5px 0 !important;
+}
+md-list-item.md-3-line:before, md-list-item.md-3-line>.md-no-style:before {
+    min-height: 0; 
+}
+
+.sortorder:after {
+	content: '\25b2';   
+    color: rgba(255,255,255,0.87) !important;
+}
+.sortorder.reverse:after {
+	content: '\25bc';    
+	color: rgba(255,255,255,0.87) !important;
+}

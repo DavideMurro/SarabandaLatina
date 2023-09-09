@@ -1,0 +1,91 @@
+nav.principale {
+	position: fixed;
+    left: 0; 
+    top: 0; 
+    z-index: 9;
+    width: 100%;
+}
+nav.principale md-toolbar {
+    background-color: #d21919 !important;
+    height: 50px !important;
+    max-height: 50px !important;
+    min-height: 50px !important;
+}
+nav.principale md-toolbar .md-toolbar-tools {
+    height: 50px !important;
+    max-height: 50px !important;
+}
+
+nav .logo_btn {
+    padding: 2px !important;
+}
+nav .logo {
+    height: 100%;
+}
+nav .menu-link {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    transition: all 0.2s;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+nav .menu-link.selected, nav .menu-link:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+nav .utente img {
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+nav .utente span {
+    vertical-align: middle;
+}
+
+
+nav .bottom {
+    position: fixed;
+    bottom: 1%;
+
+    margin-top: 0;
+    margin-bottom: 10px;
+    list-style: none;
+}
+nav .bottom.right {
+    right: 2%;
+}
+nav .bottom .item {
+    display: block;
+    background-color: #1976D2 !important;
+    width: 48px;
+    height: 48px;
+}
+nav .bottom .item md-icon svg {
+    width: 40px;
+    height: 40px;
+}
+nav .bottom .item#complete {
+    background-color: #2eb300 !important;
+}
+nav .bottom .item#revisione {
+    background-color: #2eb300 !important;
+}
+
+
+
+
+/* sub menu */
+nav.sub_menu .back {
+    width: 65px;
+    min-width: 65px;
+    margin: 0;
+}
+nav.sub_menu .back md-icon {
+    margin: 0;
+}
+.divider_vertical {
+    height: 60%;
+    border-right: 1px solid white;
+    margin: 0 15px;
+}

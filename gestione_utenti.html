@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+        <title>Sarabanda Latina</title>
+
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="lib/angular-1.6.6/angular.min.js"></script>
+        <script src="lib/angular-1.6.6/angular-animate.min.js"></script>
+        <script src="lib/angular-1.6.6/angular-aria.min.js"></script>
+        <script src="lib/angular-1.6.6/angular-messages.min.js"></script>
+
+        <!-- Angular Material Library -->
+        <script src="lib/angular-material-1.1.5/angular-material.min.js"></script>
+        <link rel="stylesheet" href="lib/angular-material-1.1.5/angular-material.min.css">
+
+        <script src="lib/ngStorage/ngStorage.min.js"></script>
+    </head>
+
+    <body ng-app="sarabandalatina" ng-controller="start" ng-cloak>
+        
+        <ng-include src="'menu.html'" ng-cloak></ng-include>
+        
+        <!-- inizio contenuto pagina -->
+        <section ng-if="utente" ng-controller="gestione_utenti" ng-init="select_utenti()">
+            <md-content>
+                <div id="gestione_utenti" ng-if="utente.admin == 1">
+                    <h3 class="md-headline">Gestione utenti</h3>
+
+                    <div layout-padding>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th ng-click="sortType = 'matricola'; sortReverse = !sortReverse">
+                                    	Mail
+        								<span class="sortorder" ng-show="sortType === 'matricola'" ng-class="{reverse: sortReverse}"></span>
+                        			</th>
+                                    <th ng-click="sortType = 'password'; sortReverse = !sortReverse">
+                                    	Password
+        								<span class="sortorder" ng-show="sortType === 'password'" ng-class="{reverse: sortReverse}"></span>
+                                    </th>
+                                    <th ng-click="sortType = 'livelloinizio'; sortReverse = !sortReverse">
+                                        Inizio
+                                        <span class="sortorder" ng-show="sortType === 'livelloinizio'" ng-class="{reverse: sortReverse}"></span>
+                                    </th>
+                                    <th ng-click="sortType = 'livellofine'; sortReverse = !sortReverse">
+                                        Fine
+                                        <span class="sortorder" ng-show="sortType === 'livellofine'" ng-class="{reverse: sortReverse}"></span>
+                                    </th>
+                                    <th ng-click="sortType = 'nome'; sortReverse = !sortReverse">
+                                        Nome
+                                        <span class="sortorder" ng-show="sortType === 'nome'" ng-class="{reverse: sortReverse}"></span>
+                                    </th>
+                                    <th ng-click="sortType = 'cognome'; sortReverse = !sortReverse">
+                                        Cognome
+                                        <span class="sortorder" ng-show="sortType === 'cognome'" ng-class="{reverse: sortReverse}"></span>
+                                    </th>
+                                    <th ng-click="sortType = 'count_login'; sortReverse = !sortReverse">
+                                        Numero accessi
+                                        <span class="sortorder" ng-show="sortType === 'count_login'" ng-class="{reverse: sortReverse}"></span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="mail" ng-model="utente_new.mail"/></td>
+                                    <td><input type="text" ng-model="utente_new.password"/></td>
+                                    <td><input type="number" ng-model="utente_new.livelloinizio"/></td>
+                                    <td><input type="number" ng-model="utente_new.livellofine"/></td>
+                                    <td><input type="text" ng-model="utente_new.nome"/></td>
+                                    <td><input type="text" ng-model="utente_new.cognome"/></td>
+                                    <td><input type="number" ng-model="utente_new.count_login"/></td>
+                                    <td><md-button ng-click="insert_utente(utente_new, false)">Aggiungi</md-button></td>
+                                </tr>
+                                <tr ng-repeat="utente in utenti | orderBy:sortType:sortReverse">
+                                    <td>{{utente.mail}}</td>
+                                    <td><input type="text" ng-model="utente.password"/></td>
+                                    <td><input type="number" ng-model="utente.livelloinizio"/></td>
+                                    <td><input type="number" ng-model="utente.livellofine"/></td>
+                                    <td><input type="text" ng-model="utente.nome"/></td>
+                                    <td><input type="text" ng-model="utente.cognome"/></td>
+                                    <td><input type="number" ng-model="utente.count_login"/></td>
+                                    <td><md-button ng-click="insert_utente(utente)">Salva</md-button></td>
+                                    <td><md-button ng-click="insert_utente(utente, true)">Elimina</md-button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </md-content>
+        </section>
+
+        <section ng-if="login_controlla_completed && !utente">
+            <h3 class="md-headline">Sessione scaduta. 
+            <br/><a href="index.html">Effettuare il Login</a></h3>
+        </section>
+
+
+        <div id='loader' ng-show="pl_loading">
+            <md-progress-circular md-mode="indeterminate" ></md-progress-circular>
+        </div>
+
+
+    </body>
+</html>
+
+<script type="text/javascript" src="config/config.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/gestione_utenti.js"></script>
+
+<link href="css/style.css" rel="stylesheet">
+<link href="css/gestione.css" rel="stylesheet">
