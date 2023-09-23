@@ -93,7 +93,7 @@ In the _config_ folder there are 2 files that are used to configure the applicat
 ## Summary
 - Screenshots:
   ![sarabandalatina altervista org_](https://github.com/DavideMurro/SarabandaLatina/assets/118051417/fc6b408f-67af-45be-aded-ad61d354d073)
-  ![sarabandalatina altervista org_home html](https://github.com/DavideMurro/SarabandaLatina/assets/118051417/25653dec-a7d1-4e08-836b-6fd22cdc2e66)
+  ![sarabandalatina altervista org_home html](https://github.com/DavideMurro/SarabandaLatina/assets/118051417/6285ad6e-de5a-43bc-8c4a-a96f94ce1b1e)
   ![sarabandalatina altervista org_home(mobile) html](https://github.com/DavideMurro/SarabandaLatina/assets/118051417/c2a835a0-308b-446f-986e-79a4ced7b7ea)
 
     
