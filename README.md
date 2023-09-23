@@ -57,7 +57,7 @@ In the _config_ folder there are 2 files that are used to configure the applicat
     www = "www.";
   }
   
-  var url = http_https + www + "sarabandalatina.it/";  // modify this line: address url of the apprication
+  var url = http_https + www + "sarabandalatina.it/";  // modify this line: address url of the application
   ```
 - **config.php**
   This file is inluded at the start of each php file. <br>
