@@ -65,7 +65,7 @@ In the _config_ folder there are 2 files that are used to configure the applicat
     www = "www.";
   }
 
-  var url = http_https + www + "sarabandalatina.it/"; // modify this line: address url of the application
+  var url = http_https + www + "sarabandalatina.it/"; // edit this line: address url of the application
   ```
 
 - **config.php**
@@ -78,10 +78,10 @@ In the _config_ folder there are 2 files that are used to configure the applicat
 
   ```php
   // connection data
-  $server = "localhost";            // modify this line: server address
-  $username = "sarabandalatina";    // modify this line: username
-  $password = "sarabandalatina";    // modify this line: password
-  $db = "sarabandalatina";          // modify this line: name of the database
+  $server = "localhost";            // edit this line: server address
+  $username = "sarabandalatina";    // edit this line: username
+  $password = "sarabandalatina";    // edit this line: password
+  $db = "sarabandalatina";          // edit this line: name of the database
 
   // start connection to DB
   try {
